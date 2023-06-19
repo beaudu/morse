@@ -11,4 +11,9 @@ Examples:
 WHAT HATH GOD WROUGHT?
 >> morse(s,'audio')
 ```
-The last command plays [this sound](morse.ogg).
+The last command plays this sound: <audio src="morse.ogg" controls preload></audio>, which is the very first message sent by inventor Samuel F.B. Morse on May 24, 1844, over an experimental line from Washington, D.C., to Baltimore.
+
+Type `doc morse` or `help morse` for syntax and options.
+
+## Author
+**François Beauducel**, [IPGP](www.ipgp.fr), [beaudu](https://github.com/beaudu), beauducel@ipgp.fr
