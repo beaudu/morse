@@ -11,7 +11,11 @@ Examples:
 WHAT HATH GOD WROUGHT?
 >> morse(s,'audio')
 ```
-The last command plays this sound: <audio src="morse.ogg" controls preload></audio>, which is the very first message sent by inventor Samuel F.B. Morse on May 24, 1844, over an experimental line from Washington, D.C., to Baltimore.
+The last command will play this sound:
+
+https://github.com/beaudu/morse/assets/16031598/bde9d0b9-4072-444a-8cae-96d49fdeffce
+
+which is the very first message sent by inventor Samuel F.B. Morse on May 24, 1844, over an experimental line from Washington, D.C., to Baltimore.
 
 Type `doc morse` or `help morse` for syntax and options.
 
