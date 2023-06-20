@@ -1,15 +1,16 @@
-# MORSE: Morse International Code
-This function translates a text into Morse code, as dot and dash string, binary vector or sound audio file. Giving a Morse code string as input, it translates back to the original text.
+# MORSE: International Morse Code
+## morse.m
+This function written in GNU Octave/Matlab language, translates a text into Morse code, as dot and dash string, binary vector or sound audio file. Giving a Morse code string as input, it translates back to the original text.
 
 ![International Morse Code](https://upload.wikimedia.org/wikipedia/commons/e/e9/International_Morse_code.png)
 
 Examples:
 ```
->> morse('SOS')
+> morse('SOS')
 ... --- ...
->> s=morse('.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... - ..--..')
+> s=morse('.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... - ..--..')
 WHAT HATH GOD WROUGHT?
->> morse('What Hath God Wrought?','audio')
+> morse('What Hath God Wrought?','audio')
 ```
 The last command will play this sound:
 
