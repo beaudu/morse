@@ -97,11 +97,11 @@ else
     for n = 1:length(xx)
         [ka,kb] = ismember(strsplit(xx{n},' '),d(:,2)); % search for letters
         kb(kb<1) = []; % unknown sequences are ignored
-        ss = repmat(' ',1,length(xx{n}));
+        ss = repmat(' ',1,length(ka));
         ss(ka) = char(d{kb,1});
         s{n} = ss;
     end
-    s = strjoin(deblank(s)); % appends the words
+    s = strjoin(s); % appends the words
 end
     
 if bin || wav
