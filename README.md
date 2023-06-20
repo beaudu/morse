@@ -9,7 +9,7 @@ Examples:
 ... --- ...
 >> s=morse('.-- .... .- -   .... .- - ....   --. --- -..   .-- .-. --- ..- --. .... - ..--..')
 WHAT HATH GOD WROUGHT?
->> morse(s,'audio')
+>> morse('What Hath God Wrought?','audio')
 ```
 The last command will play this sound:
 

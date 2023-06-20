@@ -22,9 +22,9 @@ function varargout=morse(x,varargin)
 %
 %   Reference: https://en.wikipedia.org/wiki/Morse_code
 %
-%   Author: François Beauducel
+%   Author: Franï¿½ois Beauducel
 %   Created: 2023-06-17
-%   Updated: 2023-06-18
+%   Updated: 2023-06-20
 
 % table of characters
 d = { ...
@@ -92,14 +92,16 @@ if ~inv
     % makes Morse code string
     s = strjoin(d(kb,2),' ');
 else
-    xx = strsplit(x,' '); % splits the letters
-    s = repmat(' ',1,length(xx));
-    [ka,kb] = ismember(xx,d(:,2));
-
-    % unknown sequences are removed
-    kb(kb<1) = [];
-    
-    s(ka) = char(d{kb,1});
+    xx = strsplit(x,'\s\s+','DelimiterType','regularexpression'); % split the words
+    s = cell(1,length(xx));
+    for n = 1:length(xx)
+        [ka,kb] = ismember(strsplit(xx{n},' '),d(:,2)); % search for letters
+        kb(kb<1) = []; % unknown sequences are ignored
+        ss = repmat(' ',1,length(xx{n}));
+        ss(ka) = char(d{kb,1});
+        s{n} = ss;
+    end
+    s = strjoin(deblank(s)); % appends the words
 end
     
 if bin || wav
@@ -116,6 +118,7 @@ end
 if nargout > 0
     if wav
         varargout{1} = y;
+        varargout{2} = fs;
     elseif bin
         varargout{1} = w;
     else
